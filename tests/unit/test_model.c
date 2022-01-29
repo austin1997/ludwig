@@ -478,7 +478,7 @@ int lb_halo_create(const lb_t * lb, lb_halo_t * h, int full) {
   #pragma omp parallel for schedule(dynamic, 1)
   for (int ireq = 0; ireq < h->map.nvel; ireq++) {
 
-    h->request[27+ireq] = MPI_REQUEST_NULL;
+    h->request[h->map.nvel+ireq] = MPI_REQUEST_NULL;
 
     if (h->count[ireq] > 0) {
       int i = 1 + h->map.cv[ireq][X];
@@ -494,7 +494,7 @@ int lb_halo_create(const lb_t * lb, lb_halo_t * h, int full) {
       #pragma omp critical
       {
 	MPI_Isend(h->send[ireq], mcount, MPI_DOUBLE, h->nbrrank[i][j][k],
-		  h->tagbase + ireq, h->comm, h->request + 27 + ireq);
+		  h->tagbase + ireq, h->comm, h->request + h->map.nvel + ireq);
       }
     }
   }
