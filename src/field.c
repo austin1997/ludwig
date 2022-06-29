@@ -1330,6 +1330,10 @@ int field_halo_post(const field_t * field, field_halo_t * h) {
   /* Load send buffers; post sends */
 
   TIMER_start(TIMER_FIELD_HALO_PACK);
+#if defined(__NVCC__)
+  if (!h->s_graph.created) {
+    cudaStreamBeginCapture(h->stream, cudaStreamCaptureModeGlobal);
+#endif
   dim3 nblk, ntpb;
   kernel_launch_param(h->max_buf_len, &nblk, &ntpb);
   tdpLaunchKernel(field_halo_enqueue_send_kernel, nblk, ntpb, 0, h->stream, field->target, h->target);
@@ -1344,9 +1348,18 @@ int field_halo_post(const field_t * field, field_halo_t * h) {
         continue;
       }
       int scount = field->nf*field_halo_size(h->slim[p]);
-      tdpMemcpyAsync(h->send[p], h->send_d[p], scount * sizeof(double), tdpMemcpyDeviceToHost, h->stream);
+      // tdpMemcpyAsync(h->send[p], h->send_d[p], scount * sizeof(double), tdpMemcpyDeviceToHost, h->stream);
     }
   }
+#if defined(__NVCC__)
+    cudaStreamEndCapture(h->stream, &h->s_graph.graph);
+    cudaGraphInstantiate(&h->s_graph.instance, h->s_graph.graph, NULL, NULL, 0);
+    h->s_graph.created = true;
+    printf("graph created in h = %d\n", h);
+  } 
+  printf("h address = %d\n", h);
+  cudaGraphLaunch(h->s_graph.instance, h->stream);
+#endif
   tdpStreamSynchronize(h->stream);
   tdpAssert(tdpPeekAtLastError());
   tdpAssert(tdpDeviceSynchronize());

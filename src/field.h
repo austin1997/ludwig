@@ -31,6 +31,14 @@
 
 #include "cs_limits.h"
 
+#if defined(__NVCC__)
+typedef struct cuda_graph_s{
+  bool created;
+  cudaGraph_t graph;
+  cudaGraphExec_t instance;
+} cuda_graph_t;
+#endif
+
 typedef struct field_halo_s field_halo_t;
 
 struct field_halo_s {
@@ -48,6 +56,10 @@ struct field_halo_s {
   MPI_Request request[2*27];    /* halo: array of send/recv requests */
 
   tdpStream_t stream;
+#if defined(__NVCC__)
+  cuda_graph_t s_graph;
+  cuda_graph_t r_graph;
+#endif
   field_halo_t * target;        /* target structure */
   double * send_d[27];          /* halo: device send data buffers */
   double * recv_d[27];          /* halo: device recv data buffers */
