@@ -20,7 +20,7 @@ module load mpt
 date
 echo $LD_LIBRARY_PATH
 
-EXE_PATH=/mnt/lustre/indy2lfs/work/dc134/dc134/s2225484/ludwig/benchmark/Ludwig.exe
+EXE_PATH=../../Ludwig.exe
 
 nsys profile -t cuda,mpi -o profiler-${SLURM_JOB_ID} srun --ntasks=4 --tasks-per-node=4 $EXE_PATH ./input
 
