@@ -1,0 +1,116 @@
+Loading nvidia/nvhpc/22.2
+  Loading requirement: gcc/8.2.0
+Loading intel-20.4/compilers
+  Loading requirement: intel-license intel-20.4/cc intel-20.4/fc
+Thu Jul 21 17:18:09 BST 2022
+/opt/hpe/hpc/mpt/mpt-2.25/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/libfabric/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/lib/release:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/nvshmem/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/nccl/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/mpi/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/math_libs/lib64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/compilers/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/compilers/extras/qd/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/cuda/extras/CUPTI/lib64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/cuda/lib64:/scratch/sw/gcc/8.2.0/lib64:/scratch/sw/gcc/8.2.0/lib
+Welcome to Ludwig v0.16.1 (MPI version running on 8 processes)
+Start time: Thu Jul 21 17:18:11 2022
+
+Compiler:
+  name:           Intel 19.10.3
+  version-string: Intel(R) C++ g++ 8.2 mode
+
+Target thread model: CUDA.
+Default threads per block: 128; max. threads per block: 1024.
+
+Read 31 user parameters from ./input
+
+System details
+--------------
+System size:    512 512 512
+Decomposition:  2 2 2
+Local domain:   256 256 256
+Periodic:       1 1 1
+Halo nhalo:     2
+Reorder:        true
+Initialised:    1
+
+Free energy details
+-------------------
+
+Blue phase free energy selected.
+
+Liquid crystal blue phase free energy
+Bulk parameter A0:         =  1.0000000e-02
+Magnitude of order gamma   =  3.0000000e+00
+Pitch wavevector q0        =  1.9635000e-01
+... gives pitch length     =  3.1999925e+01
+Elastic constant kappa0    =  6.4845600e-04
+Elastic constant kappa1    =  6.4845600e-04
+Amplitude (uniaxial) order =  3.3333333e-01
+Effective aspect ratio xi  =  7.0000000e-01
+Chirality                  =  3.0000080e-01
+Reduced temperature        =  0.0000000e+00
+Initial redshift           =  1.0000000e+00
+Dynamic redshift update    =             no
+Liquid crystal activity                  No
+
+Liquid crystal anchoring
+Anchoring method:          =            two
+Anchoring type (colloids): =         normal
+Anchoring type (walls):          =         normal
+Surface free energy (colloid)w1: =  2.5938240e-03
+Surface free energy (colloid)w2: =  0.0000000e+00
+Surface free energy (wall) w1:   =  0.0000000e+00
+Surface free energy (wall) w2:   =  0.0000000e+00
+Ratio (colloid) w1/kappa0:       =  4.0000000e+00
+Ratio (wall) w1/kappa0:          =  0.0000000e+00
+Computed surface order f(gamma)  =  3.3333333e-01
+
+Using Beris-Edwards solver:
+Rotational diffusion const =  5.0000000e-01
+LC fluctuations:           =  off
+
+System properties
+----------------
+Mean fluid density:           1.00000e+00
+Shear viscosity               1.00000e+00
+Bulk viscosity                1.00000e+00
+Temperature                   0.00000e+00
+External body force density   0.00000e+00  0.00000e+00  0.00000e+00
+External E-field amplitude    0.00000e+00  0.00000e+00  0.00000e+00
+External E-field frequency    0.00000e+00
+External magnetic field       0.00000e+00  0.00000e+00  0.00000e+00
+
+Lattice Boltzmann distributions
+-------------------------------
+Model:            d3q19 R
+SIMD vector len:  1
+Number of sets:   1
+Halo type:        lb_halo_target (full halo)
+Input format:     binary
+Output format:    binary
+I/O grid:         1 1 1
+
+Lattice Boltzmann collision
+---------------------------
+Relaxation time scheme:   M10
+Hydrodynamic modes:       on
+Ghost modes:              on
+Isothermal fluctuations:  off
+Shear relaxation time:    3.50000e+00
+Bulk relaxation time:     3.50000e+00
+Ghost relaxation time:    1.00000e+00
+[User   ] Random number seed: 8361235
+
+Hydrodynamics
+-------------
+Hydrodynamics: on
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+Line 115 (hydro.c): cudaErrorMemoryAllocation: out of memory
+srun: error: r2i7n2: tasks 2-3: Exited with exit code 2
+srun: Terminating job step 3004075.0
+slurmstepd: error: *** STEP 3004075.0 ON r2i7n2 CANCELLED AT 2022-07-21T17:18:18 ***
+srun: error: r2i7n7: tasks 6-7: Exited with exit code 2
+srun: error: r2i7n2: task 1: Exited with exit code 2
+srun: error: r2i7n7: task 5: Exited with exit code 2
+srun: error: r2i7n2: task 0: Exited with exit code 2
+srun: error: r2i7n7: task 4: Exited with exit code 2
+Thu Jul 21 17:18:20 BST 2022

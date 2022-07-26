@@ -1,0 +1,183 @@
+Loading nvidia/nvhpc/22.2
+  Loading requirement: gcc/8.2.0
+Loading intel-20.4/compilers
+  Loading requirement: intel-license intel-20.4/cc intel-20.4/fc
+Thu Jul 21 17:15:03 BST 2022
+/opt/hpe/hpc/mpt/mpt-2.25/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/libfabric/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/lib/release:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/mpi/intel64/lib:/scratch/sw/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/nvshmem/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/nccl/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/comm_libs/mpi/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/math_libs/lib64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/compilers/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/compilers/extras/qd/lib:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/cuda/extras/CUPTI/lib64:/scratch/sw/nvidia/hpcsdk-222/Linux_x86_64/22.2/cuda/lib64:/scratch/sw/gcc/8.2.0/lib64:/scratch/sw/gcc/8.2.0/lib
+Welcome to Ludwig v0.16.1 (MPI version running on 32 processes)
+Start time: Thu Jul 21 17:15:04 2022
+
+Compiler:
+  name:           Intel 19.10.3
+  version-string: Intel(R) C++ g++ 8.2 mode
+
+Target thread model: CUDA.
+Default threads per block: 128; max. threads per block: 1024.
+
+Read 31 user parameters from ./input
+
+System details
+--------------
+System size:    512 512 512
+Decomposition:  4 4 2
+Local domain:   128 128 256
+Periodic:       1 1 1
+Halo nhalo:     2
+Reorder:        true
+Initialised:    1
+
+Free energy details
+-------------------
+
+Blue phase free energy selected.
+
+Liquid crystal blue phase free energy
+Bulk parameter A0:         =  1.0000000e-02
+Magnitude of order gamma   =  3.0000000e+00
+Pitch wavevector q0        =  1.9635000e-01
+... gives pitch length     =  3.1999925e+01
+Elastic constant kappa0    =  6.4845600e-04
+Elastic constant kappa1    =  6.4845600e-04
+Amplitude (uniaxial) order =  3.3333333e-01
+Effective aspect ratio xi  =  7.0000000e-01
+Chirality                  =  3.0000080e-01
+Reduced temperature        =  0.0000000e+00
+Initial redshift           =  1.0000000e+00
+Dynamic redshift update    =             no
+Liquid crystal activity                  No
+
+Liquid crystal anchoring
+Anchoring method:          =            two
+Anchoring type (colloids): =         normal
+Anchoring type (walls):          =         normal
+Surface free energy (colloid)w1: =  2.5938240e-03
+Surface free energy (colloid)w2: =  0.0000000e+00
+Surface free energy (wall) w1:   =  0.0000000e+00
+Surface free energy (wall) w2:   =  0.0000000e+00
+Ratio (colloid) w1/kappa0:       =  4.0000000e+00
+Ratio (wall) w1/kappa0:          =  0.0000000e+00
+Computed surface order f(gamma)  =  3.3333333e-01
+
+Using Beris-Edwards solver:
+Rotational diffusion const =  5.0000000e-01
+LC fluctuations:           =  off
+
+System properties
+----------------
+Mean fluid density:           1.00000e+00
+Shear viscosity               1.00000e+00
+Bulk viscosity                1.00000e+00
+Temperature                   0.00000e+00
+External body force density   0.00000e+00  0.00000e+00  0.00000e+00
+External E-field amplitude    0.00000e+00  0.00000e+00  0.00000e+00
+External E-field frequency    0.00000e+00
+External magnetic field       0.00000e+00  0.00000e+00  0.00000e+00
+
+Lattice Boltzmann distributions
+-------------------------------
+Model:            d3q19 R
+SIMD vector len:  1
+Number of sets:   1
+Halo type:        lb_halo_target (full halo)
+Input format:     binary
+Output format:    binary
+I/O grid:         1 1 1
+
+Lattice Boltzmann collision
+---------------------------
+Relaxation time scheme:   M10
+Hydrodynamic modes:       on
+Ghost modes:              on
+Isothermal fluctuations:  off
+Shear relaxation time:    3.50000e+00
+Bulk relaxation time:     3.50000e+00
+Ghost relaxation time:    1.00000e+00
+[User   ] Random number seed: 8361235
+
+Hydrodynamics
+-------------
+Hydrodynamics: on
+
+Order parameter I/O
+-------------------
+Order parameter I/O format:   
+I/O decomposition:            1 1 1
+
+Advection scheme order: 3
+Gradient calculation: 3d_7pt_fluid
+
+
+Initialising Q_ab to cholesteric
+Helical axis Z
+Initial conditions.
+
+Scalars - total mean variance min max
+[rho]   134217728.00  1.00000000000  2.2204460e-16  1.00000000000  1.00000000000
+[phi]  1.1184888e+07  8.3333910e-02 3.1250069e-02 -1.6666667e-01 3.3333333e-01
+[phi]  1.5424747e+01  1.1492332e-07 3.1249931e-02 -2.5000000e-01 2.5000000e-01
+[phi]  0.0000000e+00  0.0000000e+00 0.0000000e+00  0.0000000e+00 0.0000000e+00
+[phi]  1.1184733e+07  8.3332756e-02 3.1250069e-02 -1.6666667e-01 3.3333333e-01
+[phi]  0.0000000e+00  0.0000000e+00 0.0000000e+00  0.0000000e+00 0.0000000e+00
+
+Momentum - x y z
+[total   ]  0.0000000e+00  0.0000000e+00  0.0000000e+00
+[fluid   ]  0.0000000e+00  0.0000000e+00  0.0000000e+00
+
+Starting time step loop.
+
+Scalars - total mean variance min max
+[rho]   134217728.00  1.00000000003  8.4059648e-11  0.99999999981  1.00000001221
+[phi]  1.1073999e+07  8.2507719e-02 3.1029972e-02 -1.6661093e-01 3.3162547e-01
+[phi]  1.4599088e+01  1.0877168e-07 3.1029859e-02 -2.4911811e-01 2.4911811e-01
+[phi] -7.6254590e-11 -5.6814097e-19 2.4127460e-33 -1.4008513e-16 1.3803301e-16
+[phi]  1.1073852e+07  8.2506627e-02 3.1029972e-02 -1.6661106e-01 3.3162528e-01
+[phi] -4.2538685e-11 -3.1693790e-19 4.4506153e-33 -2.3171937e-16 2.2426529e-16
+
+Free energies - timestep f v f/v f_bulk/v f_grad/v redshift
+[fe]           1000 -9.0432961029e+03  1.3421772800e+08 -6.7377806477e-05 -6.9424084747e-05  2.0462782779e-06  1.0000000000e+00
+
+Momentum - x y z
+[total   ] -1.0350050e-09 -4.9021764e-10  4.8203219e-10
+[fluid   ] -1.0350050e-09 -4.9021764e-10  4.8203219e-10
+
+Velocity - x y z
+[minimum ] -1.7694362e-16 -8.3277712e-17 -1.0530559e-10
+[maximum ]  1.2490476e-16  5.5518686e-17  1.0530565e-10
+
+Completed cycle 1000
+
+Timer resolution: 1e-09 second
+
+Timer statistics
+             Section:       tmin       tmax      total
+               Total:     63.762     63.804     63.773  63.773398 (1 call)
+      Time step loop:      0.043      1.579     57.496   0.057496 (1000 calls)
+         Propagation:      0.002      0.114      2.040   0.002040 (1000 calls)
+    Propagtn (krnl) :      0.002      0.019      1.854   0.001854 (1000 calls)
+           Collision:      0.002      0.257      2.428   0.002428 (1000 calls)
+   Collision (krnl) :      0.002      0.191      2.337   0.002337 (1000 calls)
+       Lattice halos:      0.011      1.019     17.729   0.017729 (1000 calls)
+       phi gradients:      0.008      1.278     14.051   0.014051 (1000 calls)
+    phi grad (krnl) :      0.003      0.038      2.662   0.002662 (1000 calls)
+           phi halos:      0.005      1.160     10.977   0.010977 (1000 calls)
+                 BBL:      0.000      0.206      0.226   0.000226 (1000 calls)
+   Force calculation:      0.004      0.211      4.803   0.004803 (1000 calls)
+   Phi force (krnl) :      0.001      0.002      1.148   0.001148 (1000 calls)
+          phi update:      0.012      0.642     15.809   0.015809 (1000 calls)
+      Velocity Halo :      0.001      0.620      4.633   0.004633 (1000 calls)
+BE mol field (krnl) :      0.002      0.388      1.773   0.001773 (1000 calls)
+BP BE update (krnl) :      0.002      0.004      2.436   0.002436 (1000 calls)
+     Advectn (krnl) :      0.004      0.051      4.218   0.004218 (1000 calls)
+ Advectn BCS (krnl) :      0.002      0.094      2.057   0.002057 (1000 calls)
+               Free1:      0.000      2.086      2.202   0.002202 (1000 calls)
+Warning: key/value present in input but not used:
+(Line 81): boundary_walls_on
+Warning: key/value present in input but not used:
+(Line 60): lc_init_nematic
+Warning: key/value present in input but not used:
+(Line 55): lc_active_zeta
+Warning: key/value present in input but not used:
+(Line 18): reduced_halo
+End time: Thu Jul 21 17:16:11 2022
+Ludwig finished normally.
+Thu Jul 21 17:16:12 BST 2022
